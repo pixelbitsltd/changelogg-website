@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && NODE_ENV=production eleventy",
+    "build": "npm run clean && concurrently npm:build:*",
+    "build:11ty": "NODE_ENV=production eleventy",
+    "build:tailwind": "tailwindcss -i src/assets/css/style.css -o dist/css/style.css --postcss",
     "clean": "rimraf dist",
     "dev:11ty": "eleventy --serve --watch",
     "dev:tailwind": "tailwindcss -i src/assets/css/style.css -o dist/css/style.css --watch --postcss",
