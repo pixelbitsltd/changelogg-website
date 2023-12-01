@@ -1,0 +1,32 @@
+@import url('https://fonts.cdnfonts.com/css/garamond');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.after-peer-checked\:text-gray-500:has(+ .peer:checked) {
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.swipe {
+  background-image: url("/img/swipe.svg");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  padding-bottom: 0.5rem;
+}
+
+#hs-basic-with-description:checked ~ #pricingDescription h2.monthly-price {
+  display: none;
+}
+
+#hs-basic-with-description:checked ~ #pricingDescription h2.annual-price {
+  display: block;
+}
+
+.billing-cycle::after {
+  content: 'monthly'
+}
+
+#hs-basic-with-description:checked ~ #pricingDescription p.billing-cycle::after {
+  content: 'annually'
+}

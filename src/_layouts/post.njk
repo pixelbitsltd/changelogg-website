@@ -1,0 +1,16 @@
+---
+layout: base
+---
+<article class="hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">{{title}}</h1>
+        <ul class="meta">
+            <li class="meta-date">
+                <time class="entry-date published">{{ date }}</time>
+            </li>
+        </ul>
+    </header>
+    <div class="entry-content">
+        {{ content | safe }}
+    </div>
+</article>

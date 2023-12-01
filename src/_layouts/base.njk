@@ -1,0 +1,39 @@
+{%- set t = ((seo.title or title)) %}
+{%- set d = seo.description or meta.description %}
+{%- set u = page.url or settings.url %}
+{%- set i = (thumbnail or settings.meta.opengraphDefaultImage) %}
+{%- set ia = thumbnailDescription or meta.opengraphDefaultAlt %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ t }}</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+
+  <meta property="og:site_name" content="{{ meta.title }}">
+  <meta property="og:title" content="{{ t }}">
+  <meta property="og:description" content="{{ d }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ u }}">
+  <meta property="og:image" content="{{ i }}">
+  <meta property="og:image:alt" content="{{ ia }}"/>
+
+  <link rel="icon" href="/img/favicon.ico" sizes="any">
+  <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icon.png">
+</head>
+
+<body class="bg-offwhite">
+  {{ content | safe }}
+
+  <script src="{{ "/js/preline.js" | url }}"></script>
+  <!-- Remove after Firefox#121 -->
+  <script src="https://unpkg.com/css-has-pseudo@6.0.0/dist/browser-global.js"></script>
+  <script>cssHasPseudo(document)</script>
+</body>
+
+</html>
