@@ -36,58 +36,58 @@
   max-width:100%;
   height: auto;
   position:relative;
-  
-  input[type=radio] {
-    position: absolute;
-    visibility: hidden;
-  }
+}
 
-  label { 
-    cursor: pointer;
+.slider input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+}
 
-    width: 20px;
-    height: 20px;
-    display:inline-block;
-    position: absolute;
-    border-radius: 20px;
-    background: black;
-    margin-top: 50%;
-    left: calc(50% - 20px);
-  }
+.slider input[type=radio]:checked + div {
+  opacity:1;
+  visibility:visible;
+}
 
-  .slide {
-    max-width:100%;
-    height: auto;
-    position:absolute;
-    transition: all ease-in-out 500ms;
-    opacity:0;
-    visibility:hidden;
-  }
+.slider label { 
+  cursor: pointer;
 
-  .previous {
+  width: 20px;
+  height: 20px;
+  display:inline-block;
+  position: absolute;
+  border-radius: 20px;
+  background: black;
+  margin-top: 50%;
+  left: calc(50% - 20px);
+}
+
+.slider .slide {
+  max-width:100%;
+  height: auto;
+  position:absolute;
+  transition: all ease-in-out 500ms;
+  opacity:0;
+  visibility:hidden;
+}
+
+.slider .previous {
     margin-right: 30px;
     opacity:0.2;
     transition: opacity ease-in-out 300ms;
+}
 
-    &:hover {
-      opacity:1 !important;
-    }
-  }
+.slider .previous:hover {
+  opacity:1 !important;
+}
 
-  .next {
-    margin-left: 30px;
-    opacity:0.2;
-    transition: opacity ease-in-out 300ms;
+.slider .next {
+  margin-left: 30px;
+  opacity:0.2;
+  transition: opacity ease-in-out 300ms;
+}
 
-    &:hover {
-      opacity:1 !important;
-    }
-  }
-
-  input[type=radio]:checked + div {
-    opacity:1;
-    visibility:visible;
-  }
+.slider .next:hover {
+  opacity:1 !important;
 }
 
 #slide-1 label[for="control-1"] {
