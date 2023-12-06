@@ -1,4 +1,23 @@
 ---
 layout: base
 ---
-Post!
+<div class="container mx-auto mt-14">
+  {% include "blogHeader.njk" %}
+  <div class="mt-4">
+    {% for keyword in keywords %}
+      <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border
+      border-gray-800 text-gray-800"
+      >{{ keyword }}</span>
+    {% endfor %}
+  </div>
+  <article class="mt-8">
+      <header>
+          <h1 class="font-serif text-4xl">{{title}}</h1>
+          <h2 class="mt-2 text-gray-600"><time datetime={{date | dateToRfc3339 }}>{{ date | formatDate }}</time> 🞄 {{ author }}
+          <img class="mt-8 mx-auto rounded-md h-[600px]" src="{{ thumbnail | url }}">
+      </header>
+      <section class="mx-auto mt-8 w-9/12">
+        {{ content | safe }}
+      </section>
+  </article>
+</div>

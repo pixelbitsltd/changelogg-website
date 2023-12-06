@@ -5,6 +5,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: [
     "./src/**/*.{njk,md}",
+    './.markdown-tailwind-mapping.js',
     'node_modules/preline/dist/*.js'
   ],
   theme: {
