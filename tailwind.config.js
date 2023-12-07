@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       colors: {
         offwhite: '#F6F8FA',
+        brand: '#00C78C'
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],

@@ -5,6 +5,28 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  min-width: 320px;
+}
+
+#trackType {
+  width: 4em;
+  display: inline-block;
+  text-align: right;
+}
+
+#trackType:after {
+  content: "API";
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  0% { content:"API"; }
+  30% { content:"platform"; }
+  60% { content:"software"; }
+  90% { content:"website"; }
+}
+
 .after-peer-checked\:text-gray-500:has(+ .peer:checked) {
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
