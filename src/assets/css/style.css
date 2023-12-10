@@ -9,24 +9,6 @@ body {
   min-width: 320px;
 }
 
-#trackType {
-  width: 4em;
-  display: inline-block;
-  text-align: right;
-}
-
-#trackType:after {
-  content: "API";
-  animation: spin 10s linear infinite;
-}
-
-@keyframes spin {
-  0% { content:"API"; }
-  30% { content:"platform"; }
-  60% { content:"software"; }
-  90% { content:"website"; }
-}
-
 .after-peer-checked\:text-gray-500:has(+ .peer:checked) {
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
@@ -35,14 +17,14 @@ body {
   background-image: url("/img/swipe.svg");
   background-repeat: no-repeat;
   background-position-y: bottom;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.7rem;
 }
 
-#hs-basic-with-description:checked ~ #pricingDescription h2.monthly-price {
+#hs-basic-with-description:checked~#pricingDescription h2.monthly-price {
   display: none;
 }
 
-#hs-basic-with-description:checked ~ #pricingDescription h2.annual-price {
+#hs-basic-with-description:checked~#pricingDescription h2.annual-price {
   display: block;
 }
 
@@ -50,14 +32,14 @@ body {
   content: 'monthly'
 }
 
-#hs-basic-with-description:checked ~ #pricingDescription p.billing-cycle::after {
+#hs-basic-with-description:checked~#pricingDescription p.billing-cycle::after {
   content: 'annually'
 }
 
 .slider {
-  max-width:100%;
+  max-width: 100%;
   height: auto;
-  position:relative;
+  position: relative;
 }
 
 .slider input[type=radio] {
@@ -65,57 +47,58 @@ body {
   visibility: hidden;
 }
 
-.slider input[type=radio]:checked + div {
-  opacity:1;
-  visibility:visible;
+.slider input[type=radio]:checked+div {
+  opacity: 1;
+  visibility: visible;
 }
 
-.slider label { 
+.slider label {
   cursor: pointer;
 
   width: 20px;
   height: 20px;
-  display:inline-block;
+  display: inline-block;
   position: absolute;
   border-radius: 20px;
   background: black;
-  margin-top: 50%;
+
+  bottom: 5px;
   left: calc(50% - 20px);
 }
 
 .slider .slide {
-  max-width:100%;
+  max-width: 100%;
   height: auto;
-  position:absolute;
+  position: absolute;
   transition: all ease-in-out 500ms;
-  opacity:0;
-  visibility:hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .slider .previous {
-    margin-right: 30px;
-    opacity:0.2;
-    transition: opacity ease-in-out 300ms;
+  margin-right: 30px;
+  opacity: 0.2;
+  transition: opacity ease-in-out 300ms;
 }
 
 .slider .previous:hover {
-  opacity:1 !important;
+  opacity: 1 !important;
 }
 
 .slider .next {
   margin-left: 30px;
-  opacity:0.2;
+  opacity: 0.2;
   transition: opacity ease-in-out 300ms;
 }
 
 .slider .next:hover {
-  opacity:1 !important;
+  opacity: 1 !important;
 }
 
 #slide-1 label[for="control-1"] {
-  opacity:1 !important;
+  opacity: 1 !important;
 }
 
 #slide-2 label[for="control-2"] {
-  opacity:1 !important;
+  opacity: 1 !important;
 }
